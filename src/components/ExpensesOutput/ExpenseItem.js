@@ -7,16 +7,12 @@ import { GlobalStyles } from '../../constants/styles';
 import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 const { colors } = GlobalStyles;
 
-function ExpenseItem({ description, amount, date }) {
+function ExpenseItem({ id, description, amount, date }) {
+    console.log('ExpenseItem id: ', id);
     const navigation = useNavigation();
     function expensePressHandler() {
         navigation.navigate('ManageExpense', {
-            // expenseId: id,
-            // expenseData: {
-            //     description,
-            //     amount,
-            //     date
-            // }
+            expenseId: id
         });
     }
 

@@ -7,6 +7,7 @@ function ExpensesList({ expenses }) {
         console.log('sending itemData.item: ', itemData.item);
         return (
             <ExpenseItem
+                id={itemData.item.id}
                 description={itemData.item.description}
                 amount={itemData.item.amount}
                 date={itemData.item.date}
