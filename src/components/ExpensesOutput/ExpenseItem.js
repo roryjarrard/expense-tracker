@@ -1,4 +1,5 @@
 import { Pressable, View, StyleSheet, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { getFormattedDate } from '../../util/date';
 
@@ -7,7 +8,17 @@ import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 const { colors } = GlobalStyles;
 
 function ExpenseItem({ description, amount, date }) {
-    function expensePressHandler() { }
+    const navigation = useNavigation();
+    function expensePressHandler() {
+        navigation.navigate('ManageExpense', {
+            // expenseId: id,
+            // expenseData: {
+            //     description,
+            //     amount,
+            //     date
+            // }
+        });
+    }
 
 
     return (
