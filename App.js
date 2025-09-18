@@ -8,6 +8,8 @@ import ManageExpenses from './src/screens/ManageExpenses';
 import RecentExpenses from './src/screens/RecentExpenses';
 import AllExpenses from './src/screens/AllExpenses';
 
+import IconButton from './src/components/UI/IconButton';
+
 import { GlobalStyles } from './src/constants/styles';
 const { colors } = GlobalStyles;
 
@@ -21,6 +23,7 @@ function ExpensesOverview() {
       headerTintColor: 'white',
       tabBarStyle: { backgroundColor: colors.primary500 },
       tabBarActiveTintColor: colors.accent500,
+      headerRight: ({ tintColor }) => <IconButton icon="add" size={24} color={tintColor} onPress={() => { }} />,
     }}>
       <Tabs.Screen
         name="RecentExpenses"
