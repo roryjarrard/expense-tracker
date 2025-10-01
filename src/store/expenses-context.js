@@ -14,7 +14,8 @@ function expensesReducer(state, action) {
             const id = new Date().toString() + Math.random().toString();
             return [{ id, ...action.payload }, ...state];
         case 'SET':
-            return action.payload;
+            const inverted = action.payload.slice().reverse();
+            return inverted;
         case 'UPDATE':
             const updateableExpenseIndex = state.findIndex((expense) => expense.id === action.payload.id);
             const updateableExpense = state[updateableExpenseIndex];
