@@ -22,13 +22,23 @@ export async function fetchExpenses() {
         expenses.push(expenseObj);
     }
 
+    // wait 1 second to simulate loading
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     return expenses;
+
 }
 
-export function updateExpense(id, expenseData) {
+export async function updateExpense(id, expenseData) {
+    // wait 1 second to simulate loading
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     return axios.put(BACKEND_URL + `/expenses/${id}.json`, expenseData);
 }
 
-export function deleteExpense(id) {
+export async function deleteExpense(id) {
+    // wait 1 second to simulate loading
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     return axios.delete(BACKEND_URL + `/expenses/${id}.json`);
 }
